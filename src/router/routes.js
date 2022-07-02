@@ -7,7 +7,8 @@ const routes = [
       { path: '', name: 'loginDefault', component: () => import('pages/Login.vue') },
       { path: 'login', name: 'login', component: () => import('pages/Login.vue') },
       { path: 'register', name: 'register', component: () => import('pages/Register.vue') },
-      { path: 'email-confirmation', name: 'email-confirmation', component: () => import('pages/EmailConfirmation.vue') }
+      { path: 'email-confirmation', name: 'email-confirmation', component: () => import('pages/EmailConfirmation.vue') },
+      { path: 'me', name: 'me', component: () => import('pages/Me.vue') }
     ]
   },
   {
