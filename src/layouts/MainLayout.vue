@@ -54,7 +54,6 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
@@ -102,6 +101,9 @@ const linksList = [
   }
 ]
 
+
+import { defineComponent, ref } from 'vue'
+
 import useAuthUser from 'src/composable/UseAuthUser'
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
@@ -116,7 +118,7 @@ export default defineComponent({
   setup () {
     const leftDrawerOpen = ref(false)
 
-    const $q = useQuasar
+    const $q = useQuasar()
 
     const router = useRouter()
 
@@ -124,15 +126,14 @@ export default defineComponent({
 
     const handleLogout = async () => {
       $q.dialog({
-        title: 'Confirmacao',
-        message: 'Voce quer realmente sair?',
+        title: 'Confirmação',
+        message: 'Você quer realmente sair?',
         cancel: true,
         persistent: true
       }).onOk(async () => {
         await logout()
         router.replace({ name: 'login' })
       })
-
 
     }
 
